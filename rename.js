@@ -43,21 +43,21 @@
 const inArg = $arguments; // console.log(inArg)
 const nx = inArg.nx || false,
   bl = inArg.bl || false,
-  nf = inArg.nf || false,
+  nf = inArg。nf || false，
   key = inArg.key || false,
-  blgd = inArg.blgd || false,
+  blgd = inArg.blgd || false，
   blpx = inArg.blpx || false,
   blnx = inArg.blnx || false,
   numone = inArg.one || false,
-  debug = inArg.debug || false,
+  debug = inArg。debug || false，
   clear = inArg.clear || false,
   addflag = inArg.flag || false,
   nm = inArg.nm || false;
 
 const FGF = inArg.fgf == undefined ? " " : decodeURI(inArg.fgf),
-  XHFGF = inArg.sn == undefined ? " " : decodeURI(inArg.sn),
+  XHFGF = inArg.sn == undefined ? " " : decodeURI(inArg。sn)，
   FNAME = inArg.name == undefined ? "" : decodeURI(inArg.name),
-  BLKEY = inArg.blkey == undefined ? "" : decodeURI(inArg.blkey),
+  BLKEY = inArg.blkey == undefined ? "" : decodeURI(inArg。blkey)，
   blockquic = inArg.blockquic == undefined ? "" : decodeURI(inArg.blockquic),
   nameMap = {
     cn: "cn",
@@ -68,7 +68,7 @@ const FGF = inArg.fgf == undefined ? " " : decodeURI(inArg.fgf),
     gq: "gq",
     flag: "gq",
   },
-  inname = nameMap[inArg.in] || "",
+  在name = nameMap[inArg.in] || "",
   outputName = nameMap[inArg.out] || "";
 // prettier-ignore
 const FG = ['🇭🇰','🇲🇴','🇹🇼','🇯🇵','🇰🇷','🇸🇬','🇺🇸','🇬🇧','🇫🇷','🇩🇪','🇦🇺','🇦🇪','🇦🇫','🇦🇱','🇩🇿','🇦🇴','🇦🇷','🇦🇲','🇦🇹','🇦🇿','🇧🇭','🇧🇩','🇧🇾','🇧🇪','🇧🇿','🇧🇯','🇧🇹','🇧🇴','🇧🇦','🇧🇼','🇧🇷','🇻🇬','🇧🇳','🇧🇬','🇧🇫','🇧🇮','🇰🇭','🇨🇲','🇨🇦','🇨🇻','🇰🇾','🇨🇫','🇹🇩','🇨🇱','🇨🇴','🇰🇲','🇨🇬','🇨🇩','🇨🇷','🇭🇷','🇨🇾','🇨🇿','🇩🇰','🇩🇯','🇩🇴','🇪🇨','🇪🇬','🇸🇻','🇬🇶','🇪🇷','🇪🇪','🇪🇹','🇫🇯','🇫🇮','🇬🇦','🇬🇲','🇬🇪','🇬🇭','🇬🇷','🇬🇱','🇬🇹','🇬🇳','🇬🇾','🇭🇹','🇭🇳','🇭🇺','🇮🇸','🇮🇳','🇮🇩','🇮🇷','🇮🇶','🇮🇪','🇮🇲','🇮🇱','🇮🇹','🇨🇮','🇯🇲','🇯🇴','🇰🇿','🇰🇪','🇰🇼','🇰🇬','🇱🇦','🇱🇻','🇱🇧','🇱🇸','🇱🇷','🇱🇾','🇱🇹','🇱🇺','🇲🇰','🇲🇬','🇲🇼','🇲🇾','🇲🇻','🇲🇱','🇲🇹','🇲🇷','🇲🇺','🇲🇽','🇲🇩','🇲🇨','🇲🇳','🇲🇪','🇲🇦','🇲🇿','🇲🇲','🇳🇦','🇳🇵','🇳🇱','🇳🇿','🇳🇮','🇳🇪','🇳🇬','🇰🇵','🇳🇴','🇴🇲','🇵🇰','🇵🇦','🇵🇾','🇵🇪','🇵🇭','🇵🇹','🇵🇷','🇶🇦','🇷🇴','🇷🇺','🇷🇼','🇸🇲','🇸🇦','🇸🇳','🇷🇸','🇸🇱','🇸🇰','🇸🇮','🇸🇴','🇿🇦','🇪🇸','🇱🇰','🇸🇩','🇸🇷','🇸🇿','🇸🇪','🇨🇭','🇸🇾','🇹🇯','🇹🇿','🇹🇭','🇹🇬','🇹🇴','🇹🇹','🇹🇳','🇹🇷','🇹🇲','🇻🇮','🇺🇬','🇺🇦','🇺🇾','🇺🇿','🇻🇪','🇻🇳','🇾🇪','🇿🇲','🇿🇼','🇦🇩','🇷🇪','🇵🇱','🇬🇺','🇻🇦','🇱🇮','🇨🇼','🇸🇨','🇦🇶','🇬🇮','🇨🇺','🇫🇴','🇦🇽','🇧🇲','🇹🇱']
@@ -228,8 +228,8 @@ function operator(pro) {
       ikeys = "";
     // 保留固定格式 倍率
     if (blgd) {
-      regexArray.forEach((regex, index) => {
-        if (regex.test(e.name)) {
+      regexArray。forEach((regex， index) => {
+        if (regex.test(e。name)) {
           ikeys = valueArray[index];
         }
       });
@@ -237,11 +237,11 @@ function operator(pro) {
 
     // 正则 匹配倍率
     if (bl) {
-      const match = e.name.match(
+      const match = e。name。match(
         /((倍率|X|x|×)\D?((\d{1,3}\.)?\d+)\D?)|((\d{1,3}\.)?\d+)(倍|X|x|×)/
       );
       if (match) {
-        const rev = match[0].match(/(\d[\d.]*)/)[0];
+        const rev = match[0]。match(/(\d[\d.]*)/)[0];
         if (rev !== "1") {
           const newValue = rev + "×";
           ikey = newValue;
@@ -252,7 +252,7 @@ function operator(pro) {
     !GetK && ObjKA(Allmap)
     // 匹配 Allkey 地区
     const findKey = AMK.find(([key]) =>
-      e.name.includes(key)
+      e。name。includes(key)
     )
     
     let firstName = "",
@@ -275,30 +275,30 @@ function operator(pro) {
         }
       }
       keyover = keyover
-        .concat(firstName, usflag, nNames, findKeyValue, retainKey, ikey, ikeys)
-        .filter((k) => k !== "");
-      e.name = keyover.join(FGF);
+        .concat(firstName， usflag， nNames, findKeyValue, retainKey, ikeys, ikey)
+        。filter((k) => k !== "");
+      e。name = keyover.join(FGF);
     } else {
       if (nm) {
-        e.name = FNAME + FGF + e.name;
+        e。name = FNAME + FGF + e.name;
       } else {
-        e.name = null;
+        e。name = null;
       }
     }
   });
-  pro = pro.filter((e) => e.name !== null);
+  pro = pro.filter((e) => e。name !== null);
   jxh(pro);
   numone && oneP(pro);
   blpx && (pro = fampx(pro));
-  key && (pro = pro.filter((e) => !keyb.test(e.name)));
+  key && (pro = pro。filter((e) => !keyb.test(e.name)));
   return pro;
 }
 
 // prettier-ignore
 function getList(arg) { switch (arg) { case 'us': return EN; case 'gq': return FG; case 'quan': return QC; default: return ZH; }}
 // prettier-ignore
-function jxh(e) { const n = e.reduce((e, n) => { const t = e.find((e) => e.name === n.name); if (t) { t.count++; t.items.push({ ...n, name: `${n.name}${XHFGF}${t.count.toString().padStart(2, "0")}`, }); } else { e.push({ name: n.name, count: 1, items: [{ ...n, name: `${n.name}${XHFGF}01` }], }); } return e; }, []);const t=(typeof Array.prototype.flatMap==='function'?n.flatMap((e) => e.items):n.reduce((acc, e) => acc.concat(e.items),[])); e.splice(0, e.length, ...t); return e;}
+function jxh(e) { const n = e。reduce((e， n) => { const t = e.find((e) => e。name === n。name); if (t) { t.count++; t。items。push({ ...n， name: `${n。name}${XHFGF}${t。count。toString()。padStart(2， "0")}`， }); } else { e.push({ name: n。name， count: 1， items: [{ ...n， name: `${n。name}${XHFGF}01` }]， }); } return e; }， []);const t=(typeof Array。prototype。flatMap==='function'?n。flatMap((e) => e。items):n。reduce((acc， e) => acc.concat(e.items),[])); e.splice(0, e.length, ...t); return e;}
 // prettier-ignore
-function oneP(e) { const t = e.reduce((e, t) => { const n = t.name.replace(/[^A-Za-z0-9\u00C0-\u017F\u4E00-\u9FFF]+\d+$/, ""); if (!e[n]) { e[n] = []; } e[n].push(t); return e; }, {}); for (const e in t) { if (t[e].length === 1 && t[e][0].name.endsWith("01")) {/* const n = t[e][0]; n.name = e;*/ t[e][0].name= t[e][0].name.replace(/[^.]01/, "") } } return e; }
+function oneP(e) { const t = e。reduce((e， t) => { const n = t.name.replace(/[^A-Za-z0-9\u00C0-\u017F\u4E00-\u9FFF]+\d+$/, ""); if (!e[n]) { e[n] = []; } e[n].push(t); return e; }, {}); for (const e in t) { if (t[e].length === 1 && t[e][0].name.endsWith("01")) {/* const n = t[e][0]; n.name = e;*/ t[e][0].name= t[e][0].name.replace(/[^.]01/, "") } } return e; }
 // prettier-ignore
 function fampx(pro) { const wis = []; const wnout = []; for (const proxy of pro) { const fan = specialRegex.some((regex) => regex.test(proxy.name)); if (fan) { wis.push(proxy); } else { wnout.push(proxy); } } const sps = wis.map((proxy) => specialRegex.findIndex((regex) => regex.test(proxy.name)) ); wis.sort( (a, b) => sps[wis.indexOf(a)] - sps[wis.indexOf(b)] || a.name.localeCompare(b.name) ); wnout.sort((a, b) => pro.indexOf(a) - pro.indexOf(b)); return wnout.concat(wis);}
